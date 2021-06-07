@@ -64,12 +64,11 @@
         <!-- prop-demo组件入参 v-bind.sync="propValiteData -->
       </keep-alive>
     </template>
-
-
     
     <custom-input v-model="customDes"   @input="focus" @change="customChange"/>
     
     <input-listeners v-model="customDes"   @focus="focus"  @change="customChange"/> 
+    <border-situation></border-situation>
   </div>
 </template>
 
@@ -78,17 +77,15 @@
   import HelloWorld from "@/components/HelloWorld.vue";
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
-  import propDemo from "@/components/propDemo.vue";
-
-  
-  import customInput from "@/components/customInput.vue";
-  import inputListeners from "@/components/inputListeners.vue";
 
   export default {
     name: "Home",
     components: {
       HelloWorld,syncModifier,othersSlot,
-      propDemo,customInput,inputListeners
+      'propDemo':()=>import("@/components/propDemo.vue"),
+      'customInput':()=>import( "@/components/customInput.vue"),
+      'inputListeners':()=>import ("@/components/inputListeners.vue"),
+      'border-situation':()=> import ("@/components/borderSituation.vue"),
     },
     data() {
       return {       
