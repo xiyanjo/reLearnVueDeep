@@ -28,13 +28,7 @@
 
 
     <blog-post v-for="post in posts" :key="post.id" :post="post"></blog-post>
-    
-    <!-- input组件的v-model， -->
-    <!-- $listeners将所有的事件监听器指向组件特定子元素 -->
-    <base-checkbox v-model="checkbox"   @change="nativeClick" >
-      <span>好好学习</span>
-    </base-checkbox>
-    
+  
     <template>
       <!-- native修饰符可以绑定组件根元素一个原生事件 -->
       <!-- update:myPropName的触发事件，标明来源 -->
@@ -71,27 +65,30 @@
       </keep-alive>
     </template>
 
-      {{tenYearLater}}
-    <custom-input v-model="customDes"></custom-input> 
+
+    
+    <custom-input v-model="customDes"   @input="focus" @change="customChange"/>
+    
+    <input-listeners v-model="customDes"   @focus="focus"  @change="customChange"/> 
   </div>
 </template>
 
 <script>
   // @ is an alias to /src
   import HelloWorld from "@/components/HelloWorld.vue";
-  import baseCheckbox from "@/components/baseInput.vue";
   import syncDefineEvent from "@/components/syncDefineEvent.vue";
   import othersSlot from "@/components/othersSlot.vue";
   import propDemo from "@/components/propDemo.vue";
-  
 
+  
   import customInput from "@/components/customInput.vue";
+  import inputListeners from "@/components/inputListeners.vue";
 
   export default {
     name: "Home",
     components: {
-      HelloWorld, baseCheckbox,syncDefineEvent,othersSlot,
-      propDemo,customInput
+      HelloWorld,syncDefineEvent,othersSlot,
+      propDemo,customInput,inputListeners
     },
     data() {
       return {       
@@ -126,7 +123,6 @@
         components:[
           {name:'syncDefineEvent'},
           {name:'othersSlot'},
-          {name:'baseCheckbox'},
           {name:'propDemo'},
         ],
         propValiteData:{
@@ -150,6 +146,13 @@
       updateNoting(event){
         this.notingNum = event;
         console.log(999,event)
+      },
+      focus(e){
+        console.log('homeFocus',e)
+      },
+      customChange(e){
+        console.log('customChange',e.target.value)
+
       }
     }
   };
