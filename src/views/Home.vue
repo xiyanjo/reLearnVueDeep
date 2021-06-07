@@ -32,13 +32,13 @@
     <template>
       <!-- native修饰符可以绑定组件根元素一个原生事件 -->
       <!-- update:myPropName的触发事件，标明来源 -->
-      <sync-define-event  :notingNum="notingNum" @click.native="alert('888')"
-      @update:notingNum="updateNoting"></sync-define-event>
+      <sync-modifier  :notingNum="notingNum" @click.native="alert('888')"
+      @update:notingNum="updateNoting"></sync-modifier>
 
       <!-- .sync  双向绑定语法糖  功能同上-->
       <!--v-bind.sync="noSize" noSize 作为独立的porp传进去 -->
-      <sync-define-event  :notingNum.sync="notingNum" v-bind.sync="noSize">
-      </sync-define-event>
+      <sync-modifier  :notingNum.sync="notingNum" v-bind.sync="noSize">
+      </sync-modifier>
     </template>
 
    
@@ -76,7 +76,7 @@
 <script>
   // @ is an alias to /src
   import HelloWorld from "@/components/HelloWorld.vue";
-  import syncDefineEvent from "@/components/syncDefineEvent.vue";
+  import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
   import propDemo from "@/components/propDemo.vue";
 
@@ -87,7 +87,7 @@
   export default {
     name: "Home",
     components: {
-      HelloWorld,syncDefineEvent,othersSlot,
+      HelloWorld,syncModifier,othersSlot,
       propDemo,customInput,inputListeners
     },
     data() {

@@ -1,6 +1,7 @@
 <template>
   <div style="background-color: pink;width: 300px;">
     <!-- .sync双向绑定语法糖 -->
+    <h5>sync修饰符：</h5>
     <span>{{notingNum}}</span>
     <button @click="click">add</button>
     <div>{{'v-bind.sync绑定对象所有属性'+'--'+name+'---'+age}}</div>
@@ -8,7 +9,7 @@
 </template>
 <script>
   export default{
-    name:'syncDefineEvent',
+    name:'syncModifier',
     props:['notingNum','name','age'],
     data(){
       return{
