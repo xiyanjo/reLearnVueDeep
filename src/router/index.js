@@ -19,6 +19,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
+  {
+    path:'/borderSituation',
+    name:'borderSituation',
+    component:()=> import('@/components/borderSituation.vue')
+  }
 ];
 
 const router = new VueRouter({

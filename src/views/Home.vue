@@ -68,7 +68,12 @@
     <custom-input v-model="customDes"   @input="focus" @change="customChange"/>
     
     <input-listeners v-model="customDes"   @focus="focus"  @change="customChange"/> 
-    <border-situation></border-situation>
+
+    <provide-inject></provide-inject>
+    <border-situation v-if="showBorderSituation"></border-situation>borderSituation
+    <button @click="showBorderSituation=!showBorderSituation">切换事件监听</button>
+    <!-- <button @click="$router.push('/borderSituation')">切换事件监听</button> -->
+
   </div>
 </template>
 
@@ -86,6 +91,17 @@
       'customInput':()=>import( "@/components/customInput.vue"),
       'inputListeners':()=>import ("@/components/inputListeners.vue"),
       'border-situation':()=> import ("@/components/borderSituation.vue"),
+      'provide-inject':()=> import ("@/components/provideInject.vue"),
+
+    },
+    provide(){//很多后代组件使用的情况， 注入属性或方法，中inject来使用，非响应
+      return {
+        name:function(){
+          console.log('this',this)//这里的this为函数执行的环境，子组件中没有num property
+          return 'provideFa' 
+        },
+        text:'99999'
+      }
     },
     data() {
       return {       
@@ -129,7 +145,8 @@
           propD:'成绩的咖啡机',
           propF:'ui'
         },
-        customDes:'customDes'
+        customDes:'customDes',
+        showBorderSituation:false,
       }
     },
     methods:{
@@ -151,6 +168,12 @@
         console.log('customChange',e.target.value)
 
       }
-    }
+    },
+    beforeDestory(){
+      console(5555)
+    },
+    destroyed(){
+      console(6666)
+    },
   };
 </script>
