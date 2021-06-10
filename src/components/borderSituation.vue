@@ -7,37 +7,41 @@
 </template>
 <script>
   export default {
-    name:'borderSituation',
+    name: 'borderSituation',
     props: ['value'],
     data() {
       return {
         // value:''
+        borderData: {
+          name: 'fromBorder',
+
+        }
       }
     },
     computed: {
-      
+
     },
     methods: {
-       
+
     },
-    created(){
-      this.$once('hook:beforeDestroy',function(){
+    created() {
+      this.$once('hook:beforeDestroy', function () {
         console.log('hook:beforeDestroy')
       })
     },
-   
-    
-    active(){
+
+
+    active() {
       console.log('active')
     },
-    updated(){
+    updated() {
       console.log('updated')
     },
-  //  v-if切换组件及路由跳转都会触发 beforeDestroy和destroyed
-    beforeDestroy(){
+    //  v-if切换组件及路由跳转都会触发 beforeDestroy和destroyed
+    beforeDestroy() {
       console.log('beforeDestroy')
     },
-    destroyed(){
+    destroyed() {
       console.log('destroyed')
     },
 
