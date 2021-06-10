@@ -1,14 +1,22 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import leftMenu from "@/components/leftMenu.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
+  
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    redirect:'/home',
+    component: leftMenu,
+    children:[
+      {
+        path:'home',
+        name:'Home',
+        component:()=>import ('@/views/Home.vue')
+      }
+    ]
   },
   {
     path: "/about",
@@ -23,6 +31,10 @@ const routes = [
     path:'/borderSituation',
     name:'borderSituation',
     component:()=> import('@/components/borderSituation.vue')
+  },{
+    path:'/resuable',
+    name:'resuable',
+    component:()=> import('@/components/resuable.vue')
   }
 ];
 
