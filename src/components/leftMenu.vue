@@ -13,9 +13,16 @@ export default{
     return{
       menus:[
         {path:'/resuable',name:'可复用&组件'},
-      ]
+      ],
+      level:1
     }
-  }
+  },
+  render:function (createElement) {
+    return createElement(
+      'h' + this.level,   // 标签名称
+      this.$slots.default // 子节点数组
+    )
+  },
 }
 
 </script>

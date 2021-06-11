@@ -67,9 +67,9 @@
     <custom-input v-model="customDes" @input="focus" @change="customChange" />
 
     <input-listeners v-model="customDes" @focus="focus" @change="customChange" />
-
+    <!-- 依赖注入 -->
     <provide-inject></provide-inject>
-
+    <!-- 边界情况 -->
     <border-situation inline-template v-if="showBorderSituation">
       <div>
         <p> {{customDes}}无法使用父组件的属性？？</p>
@@ -80,7 +80,7 @@
     <!-- <button @click="$router.push('/borderSituation')">切换事件监听</button> -->
 
 
-
+    <resuable  ></resuable>
   </div>
 </template>
 
@@ -99,6 +99,8 @@
       'inputListeners': () => import("@/components/inputListeners.vue"),
       'border-situation': () => import("@/components/borderSituation.vue"),
       'provide-inject': () => import("@/components/provideInject.vue"),
+      'resuable': () => import("@/components/resuable.vue"),
+
     },
     provide() {//很多后代组件使用的情况， 注入属性或方法，中inject来使用，非响应
       return {
