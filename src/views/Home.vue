@@ -89,6 +89,7 @@
   import HelloWorld from "@/components/HelloWorld.vue";
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
+  import {getFoo} from '@/utils/prototype'
 
   export default {
     name: "Home",
@@ -176,6 +177,9 @@
         console.log('customChange', e.target.value)
 
       }
+    },
+    created(){
+      getFoo();
     },
     beforeDestory() {
       console.log(5555)
