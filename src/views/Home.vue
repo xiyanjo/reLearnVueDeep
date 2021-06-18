@@ -89,7 +89,7 @@
   import HelloWorld from "@/components/HelloWorld.vue";
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
-  import {getFoo} from '@/utils/prototype'
+  import {getFoo,inheritTypes,noConstrusctFInherit} from '@/utils/prototype'
 
   export default {
     name: "Home",
@@ -179,7 +179,9 @@
       }
     },
     created(){
-      getFoo();
+      // getFoo();
+      // inheritTypes();
+      noConstrusctFInherit();
     },
     beforeDestory() {
       console.log(5555)
