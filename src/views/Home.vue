@@ -90,7 +90,7 @@
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
   import {getFoo,inheritTypes,noConstrusctFInherit} from '@/utils/prototype'
-
+  import * as m from "@/utils/even.js"
   export default {
     name: "Home",
     components: {
@@ -181,7 +181,9 @@
     created(){
       // getFoo();
       // inheritTypes();
-      noConstrusctFInherit();
+      // noConstrusctFInherit();
+      m.even(10);
+      console.log(' m.counter', m.counter)
     },
     beforeDestory() {
       console.log(5555)
