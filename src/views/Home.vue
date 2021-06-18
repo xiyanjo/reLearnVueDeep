@@ -178,12 +178,30 @@
 
       }
     },
+    beforeCreate(){
+      console.log('1','beforeCreate')
+    },
     created(){
-      // getFoo();
-      // inheritTypes();
-      // noConstrusctFInherit();
+      console.log('1','created')
+
+      // prototypeF()
+      // evenF()
+    },
+    // 原型及继承相关
+    prototypeF(){
+      getFoo();
+      inheritTypes();
+      noConstrusctFInherit();
+    },
+    // es6循环调用及 &&
+    evenF(){
       m.even(10);
       console.log(' m.counter', m.counter)
+      m.even(20);//counter
+      console.log(' m.counter', m.counter)
+    },
+    mounted(){
+      console.log('1','mounted')
     },
     beforeDestory() {
       console.log(5555)

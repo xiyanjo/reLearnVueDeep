@@ -22,14 +22,14 @@
       }
     },
     created(){
-      console.log('created-SyncDefineEvent')
+      // console.log('created-SyncDefineEvent')
     },
     activated(){
-      console.log('activated-SyncDefineEvent')
+      // console.log('activated-SyncDefineEvent')
 
     },
     deactivated(){
-      console.log('deactivatedSyncDefineEvent')
+      // console.log('deactivatedSyncDefineEvent')
 
     }
   }

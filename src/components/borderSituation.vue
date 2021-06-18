@@ -24,15 +24,20 @@
     methods: {
 
     },
+    beforeCreate(){
+      console.log('2','beforeCreate')
+    },
     created() {
+      console.log('2','created')
       this.$once('hook:beforeDestroy', function () {
         console.log('hook:beforeDestroy')
       })
     },
-
-
+    mounted(){
+      console.log('2','mounted')
+    },
     active() {
-      console.log('active')
+      console.log('2','active')
     },
     updated() {
       console.log('updated')
