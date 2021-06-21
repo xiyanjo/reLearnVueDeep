@@ -90,6 +90,8 @@
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
   import {getFoo,inheritTypes,noConstrusctFInherit} from '@/utils/prototype'
+  import arrFun from '@/utils/arrFun'
+ 
   import * as m from "@/utils/even.js"
   export default {
     name: "Home",
@@ -179,13 +181,14 @@
       }
     },
     beforeCreate(){
-      console.log('1','beforeCreate')
+      // console.log('1','beforeCreate')
     },
     created(){
-      console.log('1','created')
+      // console.log('1','created')
 
       // prototypeF()
       // evenF()
+      arrFun.learnReduce();
     },
     // 原型及继承相关
     prototypeF(){
@@ -196,18 +199,18 @@
     // es6循环调用及 &&
     evenF(){
       m.even(10);
-      console.log(' m.counter', m.counter)
+      // console.log(' m.counter', m.counter)
       m.even(20);//counter
-      console.log(' m.counter', m.counter)
+      // console.log(' m.counter', m.counter)
     },
     mounted(){
-      console.log('1','mounted')
+      // console.log('1','mounted')
     },
     beforeDestory() {
-      console.log(5555)
+      // console.log(5555)
     },
     destroyed() {
-      console.log(6666)
+      // console.log(6666)
     },
   };
 </script>
