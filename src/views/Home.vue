@@ -89,7 +89,9 @@
   import HelloWorld from "@/components/HelloWorld.vue";
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
-  import {getFoo,inheritTypes,noConstrusctFInherit} from '@/utils/prototype'
+  import {getFoo,inheritTypes,noConstrusctFInherit,faceQuestion} from '@/utils/prototype'
+  import {protoFace} from '@/utils/faceToFace'
+
   import arrFun from '@/utils/arrFun'
  
   import * as m from "@/utils/even.js"
@@ -186,9 +188,11 @@
     created(){
       // console.log('1','created')
 
-      // prototypeF()
-      // evenF()
-      arrFun.learnReduce();
+      // prototypeF()// 原型及继承相关
+      // evenF()//es6循环调用
+      // arrFun.learnReduce();//reduce及实现找出出现次数最多的字符
+      // protoFace();//原型面试题
+
     },
     // 原型及继承相关
     prototypeF(){

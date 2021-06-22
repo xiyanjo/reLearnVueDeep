@@ -160,4 +160,8 @@ function noConstrusctFInherit(){
   console.log('deepCopy(chinese)',doc3,chinese);
 
 }
+
+
+
+
 export {getFoo,inheritTypes,noConstrusctFInherit}
