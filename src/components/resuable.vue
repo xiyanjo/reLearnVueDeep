@@ -34,26 +34,26 @@ export default{
       */
       // 指令绑定到元素
       bind:function(el, binding, vnode){
-        console.log('bind',el, binding, vnode)
+        // console.log('bind',el, binding, vnode)
       },  
       // 被绑定元素插入父节点（有父节点，不一定已经插入文档）
       inserted:function(el, binding, vnode,oldVnode){
-        console.log('inserted',el, binding, vnode,oldVnode)
+        // console.log('inserted',el, binding, vnode,oldVnode)
         el.focus()
         el.value = binding.name
       },
-      // 所有组件的VNode更新时调用（可能发生在子VNode更新前）
-      update:function(el, binding, vnode){
-        console.log('update',el, binding, vnode)
-      },  
-      // 指令所在组件VNode 及子VNode全部更新完
-      componentUpdated:function(el, binding, vnode){
-        console.log('componentUpdated',el, binding, vnode)
-      },  
-      // 指令与元素解除绑定时
-      unbind:function(el, binding, vnode){
-        console.log('unbind',el, binding, vnode)
-      },  
+      // // 所有组件的VNode更新时调用（可能发生在子VNode更新前）
+      // update:function(el, binding, vnode){
+      //   console.log('update',el, binding, vnode)
+      // },  
+      // // 指令所在组件VNode 及子VNode全部更新完
+      // componentUpdated:function(el, binding, vnode){
+      //   console.log('componentUpdated',el, binding, vnode)
+      // },  
+      // // 指令与元素解除绑定时
+      // unbind:function(el, binding, vnode){
+      //   console.log('unbind',el, binding, vnode)
+      // },  
     }
   },
   data(){

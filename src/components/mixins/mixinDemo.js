@@ -7,7 +7,7 @@ export default{
   },
   methods:{
     getUserInfo(){
-      console.log(this.userInfo);
+      // console.log(this.userInfo);
     }
   }
 }

@@ -24,31 +24,31 @@
     methods: {
 
     },
-    beforeCreate(){
-      console.log('2','beforeCreate')
-    },
-    created() {
-      console.log('2','created')
-      this.$once('hook:beforeDestroy', function () {
-        console.log('hook:beforeDestroy')
-      })
-    },
-    mounted(){
-      console.log('2','mounted')
-    },
-    active() {
-      console.log('2','active')
-    },
-    updated() {
-      console.log('updated')
-    },
-    //  v-if切换组件及路由跳转都会触发 beforeDestroy和destroyed
-    beforeDestroy() {
-      console.log('beforeDestroy')
-    },
-    destroyed() {
-      console.log('destroyed')
-    },
+    // beforeCreate(){
+    //   console.log('2','beforeCreate')
+    // },
+    // created() {
+    //   console.log('2','created')
+    //   this.$once('hook:beforeDestroy', function () {
+    //     console.log('hook:beforeDestroy')
+    //   })
+    // },
+    // mounted(){
+    //   console.log('2','mounted')
+    // },
+    // active() {
+    //   console.log('2','active')
+    // },
+    // updated() {
+    //   console.log('updated')
+    // },
+    // //  v-if切换组件及路由跳转都会触发 beforeDestroy和destroyed
+    // beforeDestroy() {
+    //   console.log('beforeDestroy')
+    // },
+    // destroyed() {
+    //   console.log('destroyed')
+    // },
 
   }
 </script>
