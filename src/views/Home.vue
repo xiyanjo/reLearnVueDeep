@@ -90,7 +90,8 @@
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
   import {getFoo,inheritTypes,noConstrusctFInherit,faceQuestion} from '@/utils/prototype'
-  import {protoFace} from '@/utils/faceToFace'
+  import {protoFace,closeArea} from '@/utils/faceToFace'
+  import regExp from '@/utils/regExp';
 
   import arrFun from '@/utils/arrFun'
  
@@ -192,6 +193,7 @@
       // evenF()//es6循环调用
       // arrFun.learnReduce();//reduce及实现找出出现次数最多的字符
       // protoFace();//原型面试题
+      closeArea();//闭包面试题
 
     },
     // 原型及继承相关
