@@ -161,7 +161,11 @@ function noConstrusctFInherit(){
 
 }
 
+function prototypeFun(){
+  getFoo();
+  inheritTypes();
+  noConstrusctFInherit();
+}
 
 
-
-export {getFoo,inheritTypes,noConstrusctFInherit}
+export {prototypeFun}

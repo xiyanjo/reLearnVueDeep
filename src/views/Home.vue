@@ -89,8 +89,8 @@
   import HelloWorld from "@/components/HelloWorld.vue";
   import syncModifier from "@/components/syncModifier.vue";
   import othersSlot from "@/components/othersSlot.vue";
-  import {getFoo,inheritTypes,noConstrusctFInherit,faceQuestion} from '@/utils/prototype'
-  import {protoFace,closeArea} from '@/utils/faceToFace'
+  import {prototypeFun} from '@/utils/prototype'
+  import {faceToFace} from '@/utils/faceToFace'
   import regExp from '@/utils/regExp';
 
   import arrFun from '@/utils/arrFun'
@@ -111,7 +111,7 @@
     provide() {//很多后代组件使用的情况， 注入属性或方法，中inject来使用，非响应
       return {
         name: function () {
-          console.log('this', this)//这里的this为函数执行的环境，子组件中没有num property
+          // console.log('this', this)//这里的this为函数执行的环境，子组件中没有num property
           return 'provideFa'
         },
         text: '99999'
@@ -189,19 +189,13 @@
     created(){
       // console.log('1','created')
 
-      // prototypeF()// 原型及继承相关
+      // prototypeFun()// 原型及继承相关
       // evenF()//es6循环调用
       // arrFun.learnReduce();//reduce及实现找出出现次数最多的字符
-      // protoFace();//原型面试题
-      closeArea();//闭包面试题
+      faceToFace();//面试题
 
     },
-    // 原型及继承相关
-    prototypeF(){
-      getFoo();
-      inheritTypes();
-      noConstrusctFInherit();
-    },
+  
     // es6循环调用及 &&
     evenF(){
       m.even(10);
