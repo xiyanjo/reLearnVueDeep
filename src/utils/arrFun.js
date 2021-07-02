@@ -22,11 +22,8 @@ var arrFun={
       // num为数组的每一项
       // total初始值, 或者计算结束后的返回值
       // reduce第二个参数initialValue，传递给函数的初始值，不传默认使用数组的第一项
-      if(total[num]){
-        total[num]++
-      }else{
-        total[num]=1
-      }
+      total[num]?total[num]++:total[num]=1
+      return total
     },{})
 
     let max ={
