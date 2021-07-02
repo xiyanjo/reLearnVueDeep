@@ -286,12 +286,142 @@ function closeArea(){
 
 }
 //重复一个字符串
-function repeatStr(){
+function repeatStr(str,n){
+  let newStr='';
+
+  // 方法一 循环
+  var repeatLoop = function (){
+    let newStr = '';
+    if(n<=0) return str
+    // 方法1.1  for循环
+    for(let i =0;i<n;i++){
+      newStr+=str
+    }
+    // 方法1.2 while
+    // while(n>0){
+    //   newStr+=str;
+    //   n--
+    // }
+    return newStr;
+  }
+  //newStr = repeatLoop();
+
+  // 方法二 递归
+  // function recursionRepeat (str,n){
+  //   if(n>0){
+  //     return  str + recursionRepeat(str,n-1);
+  //   }else{
+  //     return ''
+  //   }
+  // }
+  // newStr =  recursionRepeat('abj',3);
+  // 方法三、repeat方法
+  // newStr =  'abj'.repeat(4);
+
+
+  // console.log(newStr)
 
 }
+// 函数声明相关
+function aboutFunctionVar (){
+  var x=1,
+    y=0,
+    z=0;
+  // 1.1
+  // function add(n){
+  //     n=n+3;
+  // }
+  // y=add(x);//add函数没有返回值：undefined
+  // z=x+y;//z=1+fun
+  // console.log("y2:"+y,z);
+
+  // 1.2
+  function add(n){
+    return n=n+3;
+  }
+  y=add(x);//4
+  z=x+y;//z=1+4
+  console.log("y2:",x,y,z);
+
+  
+}
+// 创建原生的方法
+function addNativeFun(){
+  String.prototype.repeatify = String.prototype.repeatify || function(times){
+    var str = '';
+    for(let i=0;i<times;i++){
+      str += this;
+    }
+    return str;
+  }
+  var str = 'abv';
+ console.log( str.repeatify(5))
+}
+// this引用的是函数上下文，取决于调用时
+function aboutThis(){
+  var fullname = 'John Doe';
+  var obj = {
+    fullname: 'Colin Ihrig',
+    prop: {
+        fullname: 'Aurelio De Rosa',
+        getFullname: function() {
+          return this.fullname;
+        }
+    }
+  };
+  console.log(obj.prop.getFullname());
+  var test = obj.prop.getFullname;
+  console.log(test());
+}
+// 闭包相关
+function aboutClose(){
+  var name = "The Window";
+  var object = {
+    name:'my obj',
+    getNameFunc:function(){
+      return function(){
+        return this.name;
+      }
+    }
+  }
+  // console.log(object.getNameFunc()());
+
+}
+// 待看的
+function todoss(){
+  // 实现继承
+  function inherit(Child, Parent) {
+    // 继承原型上的属性 
+   Child.prototype = Object.create(Parent.prototype)
+    // 修复 constructor
+   Child.prototype.constructor = Child
+   // 存储超类
+   Child.super = Parent
+   // 静态属性继承
+   if (Object.setPrototypeOf) {
+       // setPrototypeOf es6
+       Object.setPrototypeOf(Child, Parent)
+   } else if (Child.__proto__) {
+       // __proto__ es6 引入，但是部分浏览器早已支持
+       Child.__proto__ = Parent
+   } else {
+       // 兼容 IE10 等陈旧浏览器
+       // 将 Parent 上的静态属性和方法拷贝一份到 Child 上，不会覆盖 Child 上的方法
+       for (var k in Parent) {
+           if (Parent.hasOwnProperty(k) && !(k in Child)) {
+               Child[k] = Parent[k]
+           }
+       }
+   }
+  }
+}
+
 function faceToFace(){
   // protoFace();//原型面试题
   // closeArea();//作用域闭包面试题
-  repeatStr();//重复一个字符串
+  // repeatStr()//重复一个字符串
+  // aboutFunctionVar();//函数声明相关
+  // addNativeFun();//创建原生的方法
+  // aboutThis()//this指向
 }
 export {faceToFace}
