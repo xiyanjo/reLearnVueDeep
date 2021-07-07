@@ -5,18 +5,17 @@ import leftMenu from "@/components/leftMenu.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  
   {
     path: "/",
-    redirect:'/home',
+    redirect: "/home",
     component: leftMenu,
-    children:[
+    children: [
       {
-        path:'home',
-        name:'Home',
-        component:()=>import ('@/views/Home.vue')
-      }
-    ]
+        path: "home",
+        name: "Home",
+        component: () => import("@/views/Home.vue"),
+      },
+    ],
   },
   {
     path: "/about",
@@ -28,14 +27,20 @@ const routes = [
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
-    path:'/borderSituation',
-    name:'borderSituation',
-    component:()=> import('@/components/borderSituation.vue')
-  },{
-    path:'/resuable',
-    name:'resuable',
-    component:()=> import('@/components/resuable.vue')
-  }
+    path: "/borderSituation",
+    name: "borderSituation",
+    component: () => import("@/components/borderSituation.vue"),
+  },
+  {
+    path: "/resuable",
+    name: "resuable",
+    component: () => import("@/components/resuable.vue"),
+  },
+  {
+    path: "/cssAbout",
+    name: "cssAbout",
+    component: () => import("@/views/cssAbout.vue"),
+  },
 ];
 
 const router = new VueRouter({
