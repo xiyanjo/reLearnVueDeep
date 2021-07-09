@@ -6,7 +6,7 @@
       <span>描述</span>
     </div>
     <!-- <div class="con" contenteditable="true"></div> -->
-    <div>
+    <!-- <div>
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
         <rect x="50" y="50" width="100" height="50" fill="red">
           <animate
@@ -60,7 +60,26 @@
           ></animate>
         </rect>
       </svg>
-    </div>
+    </div> -->
+    <template>
+      <!-- <h5>元素上下居中一</h5>
+      <div class="outBox">
+        <div class="inner innerBox"></div>
+      </div> -->
+      <h5>元素上下居中二</h5>
+      <div class="outBox">
+        <div class="inner innerBox2"></div>
+      </div>
+    </template>
+
+    <!-- <template>
+      <h5>清除浮动的两种方法</h5>
+      <div class="clearFloat">
+        <div style="float: left">float: left</div>
+        <div style="float: right">float: right</div>
+        <div v-if="false" style="clear: both">方法一</div>
+      </div>
+    </template> -->
   </div>
 </template>
 <script>
@@ -100,5 +119,41 @@ export default {
 }
 .con:focus:before {
   content: none;
+}
+/* 元素上下居中 */
+.outBox {
+  width: 70%;
+  height: 200px;
+  border: 1px solid pink;
+  position: relative;
+  .inner {
+    width: 100px;
+    height: 100px;
+    border: 1px solid pink;
+  }
+  .innerBox {
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .innerBox2 {
+  }
+}
+
+/* .clearFloat::after {
+  clear: both;
+  zoom: 1;
+} */
+.clearFloat {
+  border: 1px solid pink;
+  /* 清除浮动的方法二 */
+  &:after {
+    clear: both;
+    content: "";
+    display: block;
+  }
 }
 </style>
