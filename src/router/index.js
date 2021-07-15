@@ -1,6 +1,10 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import leftMenu from "@/components/leftMenu.vue";
+const leftMenu = () => import("@/components/leftMenu.vue");
+// import leftMenu from "@/components/leftMenu.vue";
+const toTop = () => import("@/components/toTop.vue");
+const Home = () => import("@/views/Home.vue");
+// import toTop from "@/components/toTop.vue";
 
 Vue.use(VueRouter);
 
@@ -13,7 +17,11 @@ const routes = [
       {
         path: "home",
         name: "Home",
-        component: () => import("@/views/Home.vue"),
+        // component: () => import("@/views/Home.vue"),
+        components: {
+          default: Home,
+          toTop: toTop,
+        },
       },
     ],
   },
