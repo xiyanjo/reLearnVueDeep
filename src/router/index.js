@@ -18,29 +18,39 @@ const routes = [
     ],
   },
   {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+    path: "/",
+    component: leftMenu,
+    children: [
+      {
+        path: "/about",
+        name: "About",
+        component: () => import("../views/About.vue"),
+      },
+      {
+        path: "/borderSituation",
+        name: "borderSituation",
+        component: () => import("@/components/borderSituation.vue"),
+      },
+      {
+        path: "/resuable/:id",
+        name: "resuable",
+        component: () => import("@/components/resuable.vue"),
+      },
+      {
+        path: "/cssAbout",
+        name: "cssAbout",
+        component: () => import("@/views/cssAbout.vue"),
+      },
+    ],
   },
-  {
-    path: "/borderSituation",
-    name: "borderSituation",
-    component: () => import("@/components/borderSituation.vue"),
-  },
-  {
-    path: "/resuable",
-    name: "resuable",
-    component: () => import("@/components/resuable.vue"),
-  },
-  {
-    path: "/cssAbout",
-    name: "cssAbout",
-    component: () => import("@/views/cssAbout.vue"),
-  },
+  // {
+  //   path: "/about",
+  //   name: "About",
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () => import("../views/About.vue"),
+  // },
 ];
 
 const router = new VueRouter({

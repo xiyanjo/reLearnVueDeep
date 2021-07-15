@@ -69,5 +69,10 @@ export default {
   created() {
     this.getUserInfo();
   },
+  beforeRouteEnter(to, from, next) {
+    next((vm) => {
+      console.log("路由里配置：id,组件中取", vm.$route.params);
+    });
+  },
 };
 </script>

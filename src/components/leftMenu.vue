@@ -1,23 +1,42 @@
 <template>
-  <div>
-    <ul style="width: 200px">
-      <li
-        style="border: 1px solid gray; margin: 5px"
-        v-for="(item, index) in menus"
-        :key="index"
-        @click="$router.push(item.path)"
-      >
-        {{ item.name }}
-      </li>
-    </ul>
-    <router-view></router-view>
+  <div class="left-menu">
+    <div
+      style="
+        width: 200px;
+        height: 100%;
+        background: #ccc;
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        top: 0;
+      "
+    >
+      <ul>
+        <li
+          style="margin: 5px; padding: 10px"
+          v-for="(item, index) in menus"
+          :key="index"
+          @click="$router.push(item.path)"
+        >
+          {{ item.name }}
+        </li>
+      </ul>
+    </div>
+    <router-view style="margin-left: 200px" />
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
-      menus: [{ path: "/resuable", name: "可复用&组件" }],
+      menus: [
+        { path: "/", name: "home" },
+        { path: "/resuable/990", name: "可复用&组件" },
+        { path: "/about", name: "About" },
+        { path: "/borderSituation", name: "borderSituation" },
+        { path: "/resuable", name: "resuable" },
+        { path: "/cssAbout", name: "cssAbout" },
+      ],
       level: 1,
     };
   },
@@ -29,3 +48,9 @@ export default {
   },
 };
 </script>
+<style scoped lang="less">
+.left-menu {
+  overflow: auto;
+  height: 100%;
+}
+</style>
