@@ -7,7 +7,7 @@
       is-link
       readonly
       label="cascader"
-      placeholder="请选择所在地区"
+      placeholder="请选择所在地区1"
       @click="show = true"
     />
     <van-popup v-model="show" round position="bottom">

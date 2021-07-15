@@ -61,16 +61,12 @@
         </rect>
       </svg>
     </div> -->
-    <template>
-      <!-- <h5>元素上下居中一</h5>
+    <!-- <template> -->
+    <!-- <h5>元素上下居中一</h5>
       <div class="outBox">
         <div class="inner innerBox"></div>
       </div> -->
-      <h5>元素上下居中二</h5>
-      <div class="outBox">
-        <div class="inner innerBox2"></div>
-      </div>
-    </template>
+    <!-- </template> -->
 
     <!-- <template>
       <h5>清除浮动的两种方法</h5>
@@ -80,6 +76,98 @@
         <div v-if="false" style="clear: both">方法一</div>
       </div>
     </template> -->
+
+    <!-- <template>
+      <div style="width: 400px; height: 400px; background: #ccc">
+        <h6>拖拽</h6>
+        <div
+          style="width: 30px; height: 30px; background: pink"
+          draggable="true"
+          @dragstart="dragstart"
+          @dragover="dragover"
+          @drop="drop"
+          @dragleave="dragleave"
+          @drag="drag"
+          @dragend="dragend"
+        ></div>
+      </div>
+    </template> -->
+    <!-- <template>
+      <h6>inline-block缝隙<h6>
+      <div>
+        <span
+          style="
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            background: goldenrod;
+          "
+          >缝隙</span
+        >
+        <span
+          style="
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            background: goldenrod;
+          "
+          >缝隙</span
+        >
+        <span
+          style="
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            background: goldenrod;
+          "
+          >缝隙</span
+        >
+        <span
+          style="
+            display: inline-block;
+            width: 100px;
+            padding: 20px;
+            background: goldenrod;
+          "
+          >缝隙</span
+        >
+      </div>
+    </template> -->
+    <!-- <template>
+      <h6>flex布局</h6>
+    </template> -->
+    <template>
+      <h6>BFC应用</h6>
+      <section>
+        <ul style="overflow: auto">
+          <li
+            style="float: left; width: 100px; height: 100px; background: pink"
+          ></li>
+        </ul>
+        <span>外部文案</span>
+      </section>
+      <section>
+        <h6>
+          浮动元素脱离正常流，正常流与浮动元素重叠,给后面的块级元素设置bfc
+        </h6>
+        <span style="float: left">浮动元素</span>
+        <span>dkjfdkfj</span>
+        <!-- <div
+          style="
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            background: pink;
+          "
+        ></div> -->
+      </section>
+      <section>
+        <h6>父元素没有高度，子元素浮动不能撑开父元素，给父元素设置bfc</h6>
+        <ul style="background: lightpink; display: inline-block; width: 100%">
+          <li style="float: left; height: 30px">2222</li>
+        </ul>
+      </section>
+    </template>
   </div>
 </template>
 <script>
@@ -90,6 +178,29 @@ export default {
     return {
       imgUrl: free,
     };
+  },
+  methods: {
+    dragstart(e) {
+      console.log(999, e);
+    },
+    dragenter(e) {
+      console.log("dragenter", e);
+    },
+    dragover(e) {
+      console.log("dragover", e);
+    },
+    drop(e) {
+      console.log("drop", e);
+    },
+    dragleave(e) {
+      console.log("dragleave", e);
+    },
+    drag(e) {
+      console.log("drag", e);
+    },
+    dragend(e) {
+      console.log("dragend", e);
+    },
   },
 };
 </script>

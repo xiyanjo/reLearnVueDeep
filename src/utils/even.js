@@ -1,9 +1,9 @@
-import {odd} from '@/utils/odd.js'
+import { odd } from "@/utils/odd.js";
 let counter = 0;
-function even(n){
+function even(n) {
   // debugger
   counter++;
   // console.log('even',n)
-  return n==0|| odd(n-1);
+  return n == 0 || odd(n - 1);
 }
-export{counter,even}
+export { counter, even };

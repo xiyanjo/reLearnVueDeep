@@ -1,13 +1,13 @@
-export default{
-  data(){
-    return{
-      userInfo:'lili',
-      tab:'default',//
-    }
+export default {
+  data() {
+    return {
+      userInfo: "lili",
+      tab: "default", //
+    };
   },
-  methods:{
-    getUserInfo(){
+  methods: {
+    getUserInfo() {
       // console.log(this.userInfo);
-    }
-  }
-}
+    },
+  },
+};

@@ -7,8 +7,10 @@ function sendAjax() {
   xhr.timeout = 3000;
   xhr.responseType = "text";
   xhr.open("post", "./server", true);
+
   xhr.onload = function (e) {
     if (this.status == 200 || this.status == 304) {
+      console.log(333);
     }
   };
   xhr.ontimeout = function (e) {};
