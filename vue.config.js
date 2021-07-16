@@ -29,7 +29,8 @@ module.exports = {
     //所有 webpack-dev-server 的选项都支持。
     //主要是用于交互接口的调试
     disableHostCheck: true,
-    host: "10.136.221.94", //localhost
+    // host: "10.136.221.94", //localhost
+    host: "localhost",
     port: 8080,
     https: false,
     hotOnly: false,
@@ -82,7 +83,8 @@ module.exports = {
   },
   css: {
     // 当为true时，css文件名可省略 module 默认为 false
-    modules: true,
+    // modules: true,//已弃用
+    requireModuleExtension: false,
     // 是否将组件中的 CSS 提取至一个独立的 CSS 文件中
     // 默认生产环境下是 true，开发环境下是 false
     //是否使用css分离插件 ExtractTextPlugin 开启CSS分离之后每个组件的css会单独打包，造成页面上有大量请求，所以在正式环境中将CSS分离关闭

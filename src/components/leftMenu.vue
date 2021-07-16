@@ -22,7 +22,10 @@
         </li>
       </ul>
     </div>
+    <!-- <transition name="slide"> -->
     <router-view style="margin-left: 200px" />
+    <!-- </transition> -->
+    <router-view name="toTop"></router-view>
   </div>
 </template>
 <script>
@@ -31,10 +34,10 @@ export default {
     return {
       menus: [
         { path: "/", name: "home" },
-        { path: "/resuable/990", name: "可复用&组件" },
+        { path: "/resuable/990", name: "可复用&组件/resuable/:id" },
         { path: "/about", name: "About" },
         { path: "/borderSituation", name: "borderSituation" },
-        { path: "/resuable", name: "resuable" },
+        // { path: "/resuable/", name: "resuable" }, //不传id无法打开页面
         { path: "/cssAbout", name: "cssAbout" },
       ],
       level: 1,

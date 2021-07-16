@@ -59,6 +59,7 @@ export default {
       // },
     },
   },
+  props: ["id"],
   data() {
     return {
       tab: ["resuable", "dfdf"],
@@ -72,6 +73,7 @@ export default {
   beforeRouteEnter(to, from, next) {
     next((vm) => {
       console.log("路由里配置：id,组件中取", vm.$route.params);
+      console.log("路由里配置props,组件中直接访问", vm.id);
     });
   },
 };
