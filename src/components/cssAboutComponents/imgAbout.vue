@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding-bottom: 30px">
     <h5>图片圆角</h5>
     <div class="imgBox">
       <img class="centerRadio" :src="imgUrl" alt="" />
@@ -77,7 +77,7 @@
       </div>
     </template> -->
 
-    <!-- <template>
+    <template>
       <div style="width: 400px; height: 400px; background: #ccc">
         <h6>拖拽</h6>
         <div
@@ -91,7 +91,7 @@
           @dragend="dragend"
         ></div>
       </div>
-    </template> -->
+    </template>
     <!-- <template>
       <h6>inline-block缝隙<h6>
       <div>
@@ -161,13 +161,14 @@
           "
         ></div> -->
       </section>
-      <section>
+      <!-- <section>
         <h6>父元素没有高度，子元素浮动不能撑开父元素，给父元素设置bfc</h6>
         <ul style="background: lightpink; display: inline-block; width: 100%">
           <li style="float: left; height: 30px">2222</li>
         </ul>
-      </section>
-      <section>
+      </section> -->
+    </template>
+    <!-- <section>
         <div style="column-count: 3">
           <div>1</div>
           <div>2</div>
@@ -175,6 +176,78 @@
           <div>4</div>
           <div>5</div>
         </div>
+      </section> -->
+    <template>
+      <h6>flex布局</h6>
+      <div
+        style="
+          display: flex;
+          background: plum;
+          height: 200px;
+          align-items: center;
+        "
+      >
+        <div style="height: 100px; flex: 1" class="box-color">1</div>
+        <div style="height: 100px; flex: 1" class="box-color">2</div>
+        <div style="height: 100px; flex: 1 1 60px" class="box-color">3</div>
+        <div style="height: 100px; flex: 1" class="box-color">4</div>
+        <div style="height: 100px; flex: 1" class="box-color">5</div>
+        <div style="height: 100px; flex: 2" class="box-color">6</div>
+      </div>
+    </template>
+    <template>
+      <section>
+        <h6>一行 超出显示为省略号</h6>
+        <div
+          style="
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            height: 50px;
+          "
+          class="box-color width100"
+        >
+          尽快升级到疯狂的世界福克斯的JFK多少积分尽快JFK收到JFK伺机待发
+          科技发达快速减肥的肯定是JFK绝对是开发
+        </div>
+      </section>
+      <section>
+        <h6>多行文本换行</h6>
+        <div
+          style="
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            height: 45px;
+          "
+          class="box-color width100"
+        >
+          尽快升级到疯狂的世界福克斯的JFK多少积分尽快JFK收到JFK伺机待发
+          科技发达快速减肥的肯定是JFK绝对是开发
+        </div>
+      </section>
+    </template>
+    <!-- <template>
+      <h6>水平居中</h6>
+      <section style="text-align: center">
+        <span>inline</span>
+        <div style="margin: 0 auto" class="width100">block</div>
+      </section>
+    </template> -->
+    <template>
+      <h6>垂直居中</h6>
+      <section
+        style="height: 50px; line-height: 50px; background: pink; width: 80px"
+      >
+        <p>单行文本--</p>
+      </section>
+      <section style="padding: 30px 0; background: goldenrod; width: 50px">
+        <p style="background: #ccc">单行文本--</p>
+      </section>
+      <section style="display: table; height: 60px">
+        <p style="display: table-cell; vertical-align: middle">css模拟表格</p>
       </section>
     </template>
   </div>
@@ -211,9 +284,21 @@ export default {
       console.log("dragend", e);
     },
   },
+  created() {
+    setTimeout(function () {
+      console.log(33333, this);
+    }, 500);
+  },
 };
 </script>
 <style scoped lang="less">
+.width100 {
+  width: 100px;
+}
+.box-color {
+  background: goldenrod;
+  margin: 5px;
+}
 .imgBox {
   width: 300px;
   height: 300px;
