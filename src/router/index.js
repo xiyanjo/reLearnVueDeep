@@ -50,6 +50,11 @@ const routes = [
         name: "cssAbout",
         component: () => import("@/views/cssAbout.vue"),
       },
+      {
+        path: "/refInVFor",
+        name: "refInVFor",
+        component: () => import("@/views/refInVFor.vue"),
+      },
     ],
   },
   // {

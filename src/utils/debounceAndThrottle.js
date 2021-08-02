@@ -14,18 +14,22 @@ function debounce(fn, wait, type) {
   let timer = null; // 定义一个函数内的变量保存timer
   // 返回一个函数,保证每个函数调用时有自己独立的空间
   return function () {
+    let _this = this;
+    let args = arguments;
     // debugger;
     if (timer) clearTimeout(timer); //用户触发函数就会清除定时器重新计时
     //1-- 非立即执行版本:用户触发行为停止后n秒
     if (type == "next") {
       //n秒后执行函数
       timer = setTimeout(function () {
-        fn();
+        // console.log("this", this);//window
+        fn.apply(_this, args);
         // timer = null;
       }, wait);
       //2-- 立即执行版本:
     } else if (type == "immer") {
       let noTimer = !timer;
+      // console.log("this", this);//document
       if (noTimer) fn(); //没有计时执行一次
       // 每次触发都会触发计时功能, (n秒后timer = null);
       timer = setTimeout(function () {
@@ -54,6 +58,7 @@ function throttle(fn, wait, type) {
     let preTime = 0;
     return function () {
       if (Date.now() - preTime > wait) {
+        // console.log("this", this);//document
         fn();
         preTime = Date.now();
       }
@@ -63,8 +68,9 @@ function throttle(fn, wait, type) {
     return function () {
       if (!timer) {
         timer = setTimeout(function () {
+          // console.log("this", this);//window
           timer = null;
-          fn();
+          fn.apply(this, arguments);
         }, wait);
       }
     };
@@ -72,8 +78,9 @@ function throttle(fn, wait, type) {
 }
 
 function onSrollBody() {
+  console.log("onScroll", this, arguments);
   console.log("我滚动了^");
 }
 
-// document.onmousemove = debounce(onSrollBody, 1000, "next");
-document.onmousemove = throttle(onSrollBody, 2000, "date");
+document.onmousemove = debounce(onSrollBody, 1000, "next");
+// document.onmousemove = throttle(onSrollBody, 2000, "timer");

@@ -39,6 +39,7 @@ export default {
         { path: "/borderSituation", name: "borderSituation" },
         // { path: "/resuable/", name: "resuable" }, //不传id无法打开页面
         { path: "/cssAbout", name: "cssAbout" },
+        { path: "/refInVFor", name: "refInVFor" },
       ],
       level: 1,
     };
